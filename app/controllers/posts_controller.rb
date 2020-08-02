@@ -3,6 +3,10 @@ class PostsController < ApplicationController
     
     end
 
+    def show
+        @post = Post.find(patams[:post_id])
+    end
+
     def new
 
     end
