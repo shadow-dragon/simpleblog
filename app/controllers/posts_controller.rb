@@ -4,7 +4,7 @@ class PostsController < ApplicationController
     end
 
     def show
-        @post = Post.find(patams[:post_id])
+        @post = Post.find(patams[:id])
     end
 
     def new
