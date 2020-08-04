@@ -14,8 +14,11 @@ class PostsController < ApplicationController
     def create
         #render plain: params[:post]
         @post = Post.new(post_params)
-        @post.save
-	    redirect _to @post
+        if (@post.save)
+          redirect_to @post
+        else
+          render 'new'
+        end
     end 
 
 
