@@ -1,7 +1,13 @@
 <h1> Add posts </h1>
 <hr>
 <%= form_for :post, url: posts_path do |f| %>
-	<p>
+  <% if @post.errors.any?  %>
+    <% @post.errors.full_messages.each do |msg| %>
+      <div class=”alert alert-danger”><%= msg %></div>
+    <% end %>
+  <% end %>
+
+  <p>
 		<%= f.label :title %><br>
 		<%= f.text_field(:title, {:class => 'form-control'}) %>
 	</p>
