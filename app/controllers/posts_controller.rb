@@ -1,10 +1,10 @@
 class PostsController < ApplicationController
     def index
-    
+      @posts = Post.all
     end
 
     def show
-        @post = Post.find(patams[:id])
+      @post = Post.find(patams[:id])
     end
 
     def new
